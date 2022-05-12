@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Suspense } from "react";
+import { lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Lottie from "react-lottie";
+import animationData from "./assets/lotties/ironman-loader";
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    return () => {};
+  }, []);
+
+  const Home = lazy(() => import("./components/Homepage"));
+  const Character = lazy(() => import("./components/CharacterDetails"));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Lottie options={defaultOptions} width={"50%"} />}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route
+              index
+              path="/character/:charactedId"
+              element={<Character />}
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
-}
+};
 
 export default App;
