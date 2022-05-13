@@ -6,8 +6,12 @@ import Loading from "./Loading";
 import { transition } from "../utils/functions";
 
 const CharacterDetails = () => {
+  // STORE CHARACTER DATA
   const [character, setCharacter] = useState();
+  // GET ID PARAMETER FROM URL
   let params = useParams();
+
+  // FETCH ON FIRST LOAD WITH CHARAACTER ID
   useEffect(() => {
     fetchCharacterDetails(params.charactedId).then((res) => {
       if (res.results.length > 0) {
@@ -17,6 +21,7 @@ const CharacterDetails = () => {
     return () => {};
   }, []);
 
+  // CHECK IF IMAGE DOES NOT EXIST
   const checkImageExist = (url) => {
     const urlSplit = url.split("/");
     if (urlSplit[urlSplit.length - 1] === "image_not_available") return false;

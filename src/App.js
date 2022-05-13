@@ -15,12 +15,14 @@ const defaultOptions = {
 };
 
 const App = () => {
-  useEffect(() => {
-    return () => {};
-  }, []);
 
+// HOMEPAGE
   const Home = lazy(() => import("./components/Homepage"));
+
+
+// CHARACTER DETAIL PAGE
   const Character = lazy(() => import("./components/CharacterDetails"));
+  
   return (
     <Suspense fallback={<Lottie options={defaultOptions} width={"50%"} />}>
       <BrowserRouter>

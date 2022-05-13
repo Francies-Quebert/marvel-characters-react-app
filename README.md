@@ -29,7 +29,15 @@ npm start
 ```sh
 npm run build
 ```
+<!-- API KEY -->
+REACT_APP_PUBLIC_API_KEY = 267ab086a24c35a6eef6692a1ff9b14b
+<!-- API HASH KEY -->
+REACT_APP_HASH_API_KEY = d376197ae893e12cfa81663018e38d12
+<!-- API PATH -->
+REACT_APP_API_PATH = https://gateway.marvel.com/v1/public/
 
 
 This is just a Demo App. Design is not on top notch due to time constraints.
 It was fun app have few 3rd party library installed one may check the [package.json](package.json) file if required
+
+

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// CREATING A INSTANCE TO STORE DEFAULT PARAMS AND API PATH FROM ENV
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_PATH,
   params: {

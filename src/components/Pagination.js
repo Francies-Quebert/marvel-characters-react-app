@@ -3,7 +3,7 @@ import React from 'react'
 
 const CustomPagination = (props) => {
   return (
-    <div className="flex justify-center py-4 bg-white border border-red-600 rounded-full my-4">
+    <div className="flex justify-center py-4 bg-white border border-red-600 rounded-xl my-2">
         <Pagination
           className="font-['Comic Neue'] text-white"
           count={props.count}
