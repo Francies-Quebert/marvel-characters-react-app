@@ -47,7 +47,7 @@ const CharacterDetails = () => {
                   initial={{ scale: 1.4 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
-                  className=" rounded-xl object-contain object-left-top  h-[750px]"
+                  className=" rounded-xl object-contain object-left-top  max-h-[750px]"
                   src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                   alt={character.name}
                 />
